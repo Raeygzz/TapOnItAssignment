@@ -1,12 +1,10 @@
 import "reflect-metadata";
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
-import jwt from "jsonwebtoken";
 import RootRoute from "./routes";
 import * as dotenv from "dotenv";
-// import { fileURLToPath } from "url";
-// import { dirname, join } from "path";
 import { AppDataSource } from "./configs";
+import { logginMiddleware } from "./middlewares/logging.middleware";
 
 dotenv.config();
 const app = express();
@@ -14,11 +12,15 @@ app.use(express.json());
 
 // app.use(morgan('dev'));
 // app.use(AuthMiddleware);
-// app.use(logginMiddleware);
+app.use(logginMiddleware);
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cors({ credentials: true, origin: process.env.URL || "*" }));
 
 app.use("/api", RootRoute);
+
+app.get("/**", async (req: Request, res: Response) => {
+  res.send("<h1>404 Not Found</h1>");
+});
 
 AppDataSource.initialize()
   .then(() => {

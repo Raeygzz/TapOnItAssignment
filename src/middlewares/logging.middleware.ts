@@ -12,7 +12,17 @@ export const logginMiddleware = (
   const date = new Date();
 
   console.log(
-    `REQUEST-LOGGER ===> , ${protocol} - ${host} - ${url} - ${httpMethod} - ${date.toDateString()}`
+    `🚀 ~ REQUEST-LOGGER ===> , 
+      protocol: ${protocol} 
+      - 
+      host: ${host}
+      - 
+      url: ${url} 
+      - 
+      httpMethod: ${httpMethod}
+      -
+      date: ${date.toDateString()}
+    `
   );
 
   next();

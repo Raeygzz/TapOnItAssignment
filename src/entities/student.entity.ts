@@ -24,6 +24,9 @@ export class StudentEntity {
   lastName?: string;
 
   @Column({ nullable: true, type: "varchar" })
+  accessToken?: string;
+
+  @Column({ nullable: true, type: "varchar" })
   city?: string;
 
   @Column({ nullable: true, type: "varchar" })
