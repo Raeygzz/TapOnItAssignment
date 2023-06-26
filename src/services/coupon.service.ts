@@ -1,9 +1,8 @@
 import { CouponQuery } from "../queries";
 import { CouponMapper } from "../mappers";
-import { CouponRequestPayload, CouponResponsePayload } from "../models";
+import { CouponResponsePayload } from "../models";
 
 export class CouponService {
-  // find all coupon
   public static async findAllCoupons() {
     let data: CouponResponsePayload[] = (
       await CouponQuery.findAllCoupons()

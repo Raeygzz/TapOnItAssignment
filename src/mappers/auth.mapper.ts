@@ -16,9 +16,13 @@ export class AuthMapper {
   ): AuthResponsePayload {
     let studentResponse: AuthResponsePayload = {
       id: entity.id ?? 0,
-      sent: entity.sent ?? false,
+      email: entity.email ?? "",
       firstName: entity.firstName ?? "",
       lastName: entity.lastName ?? "",
+      city: entity.city ?? "",
+      state: entity.state ?? "",
+      zip: entity.zip ?? "",
+      sent: entity.sent ?? false,
     };
 
     return studentResponse;

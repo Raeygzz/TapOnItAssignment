@@ -7,15 +7,7 @@ import { tokenVerifyMiddleware } from "../middlewares";
 const RootRoute = Router();
 
 RootRoute.use("/", LoginRouter);
-RootRoute.use(
-  "/coupon",
-  // tokenVerifyMiddleware,
-  CouponRouter
-);
-RootRoute.use(
-  "/student",
-  //  tokenVerifyMiddleware,
-  StudentRouter
-);
+RootRoute.use("/coupon", CouponRouter);
+RootRoute.use("/student", StudentRouter);
 
 export default RootRoute;

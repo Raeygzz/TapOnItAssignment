@@ -15,7 +15,16 @@ export class StudentService {
         AuthMapper.requestToEntityMapper(requestPayload)
       );
 
-      return data;
+      return {
+        id: data.id,
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        city: data.city,
+        state: data.state,
+        zip: data.zip,
+        sent: data.sent,
+      };
     } else {
       return "Invalid login / password";
     }

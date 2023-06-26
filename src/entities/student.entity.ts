@@ -23,9 +23,6 @@ export class StudentEntity {
   @Column({ nullable: true })
   lastName?: string;
 
-  // @Column({ nullable: true })
-  // accessToken?: string;
-
   @Column({ nullable: true })
   city?: string;
 
