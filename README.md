@@ -1,6 +1,6 @@
-# TapOnIt Assignment
+# TapOnIt BackEnd - Assignment
 
-Web Application of TapOnIt Assignment
+Web Application Backend of TapOnIt Assignment. It handles the login, read, create and coupon redeem api's mechanism.
 
 ## Prerequisite
 
@@ -8,8 +8,6 @@ To build and run the project following cli is necessary
 
 - [Node](https://nodejs.org/en)
 - [Express](https://expressjs.com/)
-- [Vue](https://vuejs.org/guide/introduction.html)
-- [Nuxt](https://v2.nuxt.com/docs/get-started/installation)
 - [postgres](https://www.postgresql.org/)
 
 ## Environment Variables
@@ -17,13 +15,14 @@ To build and run the project following cli is necessary
 To run this project, you will need to add the following environment variables to your .env file
 
 ```
-PORT=<Port>
-NODE_ENV=<node environment>
+URL=<localhost url>
+PORT=<Your Express Server Running Port>
+NODE_ENV=<node environment i.e, "DEV">
 HOST=<host>
 DB_PORT=<database port>
 USERNAME=<database username>
 PASSWORD=<database password>
-CREDENTIAL_PASSWORD=<credential password>
+CREDENTIAL_PASSWORD=<login credential password>
 DATABASE=<database name>
 LOGGING=<logging flag>
 SECRET_KEY=<your sceret key>

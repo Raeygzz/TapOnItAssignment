@@ -22,6 +22,7 @@ export class StudentMapper {
   ): StudentResponsePayload {
     let studentResponse: StudentResponsePayload = {
       id: entity.id ?? 0,
+      email: entity.email ?? "",
       firstName: entity.firstName ?? "",
       lastName: entity.lastName ?? "",
       city: entity.city ?? "",
