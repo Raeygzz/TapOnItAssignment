@@ -4,14 +4,13 @@ import cors from "cors";
 import RootRoute from "./routes";
 import * as dotenv from "dotenv";
 import { AppDataSource } from "./configs";
-import { logginMiddleware } from "./middlewares/logging.middleware";
+import { logginMiddleware } from "./middlewares";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 
 // app.use(morgan('dev'));
-// app.use(AuthMiddleware);
 app.use(logginMiddleware);
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cors({ credentials: true, origin: process.env.URL || "*" }));

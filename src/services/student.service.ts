@@ -1,14 +1,32 @@
 import { StudentQuery } from "../queries";
-import { StudentMapper } from "../mappers";
-import { StudentRequestPayload, StudentResponsePayload } from "../models";
+import { AuthMapper, StudentMapper } from "../mappers";
+import {
+  AuthRequestPayload,
+  StudentRequestPayload,
+  StudentResponsePayload,
+} from "../models";
 
 export class StudentService {
+  public static async loginStudent(requestPayload: AuthRequestPayload) {
+    let data = await StudentQuery.loginStudent(requestPayload);
+
+    if (data) {
+      await StudentQuery.loginStudent(
+        AuthMapper.requestToEntityMapper(requestPayload)
+      );
+
+      return data;
+    } else {
+      return "Invalid login / password";
+    }
+  }
+
   public static async addStudent(requestPayload: StudentRequestPayload) {
     await StudentQuery.addStudent(
       StudentMapper.requestToEntityMapper(requestPayload)
     );
 
-    return "sucess";
+    return "Sucess";
   }
 
   public static async findAllStudents() {
@@ -29,7 +47,7 @@ export class StudentService {
 
       return bookResponse;
     } else {
-      return "Book Does Not Exsist";
+      return "Student Does Not Exsist";
     }
   }
 
@@ -44,7 +62,7 @@ export class StudentService {
         StudentMapper.requestToEntityMapper(studentEntity)
       );
 
-      return "sucess";
+      return "Sucess";
     }
 
     return "Student Does Not Exsist";

@@ -25,7 +25,7 @@ export class CouponService {
         CouponMapper.requestToEntityMapper(couponEntity)
       );
 
-      return "sucess";
+      return "Sucess";
     }
 
     return "Student Does Not Exsist";

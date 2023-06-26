@@ -6,7 +6,8 @@ export class StudentMapper {
     let studentEntity = new StudentEntity();
 
     studentEntity.email = requestPayload.email;
-    studentEntity.password = requestPayload.password;
+    studentEntity.password = process.env.CREDENTIAL_PASSWORD;
+    // studentEntity.accessToken = requestPayload.accessToken;
     studentEntity.firstName = requestPayload.firstName;
     studentEntity.lastName = requestPayload.lastName;
     studentEntity.city = requestPayload.city;

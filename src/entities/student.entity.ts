@@ -11,31 +11,31 @@ export class StudentEntity {
   @PrimaryGeneratedColumn()
   id?: number;
 
-  @Column({ type: "varchar" })
+  @Column()
   email: string;
 
-  @Column({ type: "varchar" })
-  password: string;
+  @Column({ nullable: true })
+  password?: string;
 
-  @Column({ nullable: true, type: "varchar" })
+  @Column({ nullable: true })
   firstName?: string;
 
-  @Column({ nullable: true, type: "varchar" })
+  @Column({ nullable: true })
   lastName?: string;
 
-  @Column({ nullable: true, type: "varchar" })
-  accessToken?: string;
+  // @Column({ nullable: true })
+  // accessToken?: string;
 
-  @Column({ nullable: true, type: "varchar" })
+  @Column({ nullable: true })
   city?: string;
 
-  @Column({ nullable: true, type: "varchar" })
+  @Column({ nullable: true })
   state?: string;
 
-  @Column({ nullable: true, type: "varchar" })
+  @Column({ nullable: true })
   zip?: string;
 
-  @Column({ nullable: true, type: "boolean" })
+  @Column({ nullable: true })
   sent?: boolean;
 
   @CreateDateColumn({ nullable: true })
